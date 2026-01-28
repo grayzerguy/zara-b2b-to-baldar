@@ -18260,3 +18260,39 @@ pywintypes.com_error: (-2147352567, 'Exception occurred.', (4096, 'Microsoft Out
 2026-01-28 09:48:15,385 - INFO - Processed successfully: C:\Users\User\Desktop\zara b2b to baldar\downloads\דוח חנויות 27.01.xlsx
 2026-01-28 09:48:15,385 - INFO - === Cycle finished ===
 2026-01-28 09:48:15,386 - INFO - Sleeping for 15 minutes.
+2026-01-28 10:03:15,387 - INFO - === Starting automation cycle ===
+2026-01-28 10:03:16,268 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 10:03:16,376 - INFO - No new files found
+2026-01-28 10:03:16,376 - INFO - === Cycle finished ===
+2026-01-28 10:03:16,376 - INFO - Sleeping for 15 minutes.
+2026-01-28 10:18:16,377 - INFO - === Starting automation cycle ===
+2026-01-28 10:18:17,240 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 10:18:17,344 - INFO - No new files found
+2026-01-28 10:18:17,345 - INFO - === Cycle finished ===
+2026-01-28 10:18:17,345 - INFO - Sleeping for 15 minutes.
+2026-01-28 10:33:17,346 - INFO - === Starting automation cycle ===
+2026-01-28 10:33:18,199 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 10:33:18,264 - INFO - No new files found
+2026-01-28 10:33:18,264 - INFO - === Cycle finished ===
+2026-01-28 10:33:18,264 - INFO - Sleeping for 15 minutes.
+2026-01-28 11:40:10,324 - INFO - === Starting automation cycle ===
+2026-01-28 11:40:11,288 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 11:40:11,358 - INFO - No new files found
+2026-01-28 11:40:11,358 - INFO - === Cycle finished ===
+2026-01-28 11:40:37,967 - INFO - === Starting automation cycle ===
+2026-01-28 11:40:38,859 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 11:40:38,919 - INFO - No new files found
+2026-01-28 11:40:38,919 - INFO - === Cycle finished ===
+2026-01-28 11:57:03,526 - INFO - === Starting automation cycle ===
+2026-01-28 11:57:04,615 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 11:57:04,690 - INFO - No new files found
+2026-01-28 11:57:04,690 - INFO - === Cycle finished ===
+2026-01-28 11:58:09,822 - INFO - === Starting automation cycle ===
+2026-01-28 11:58:10,695 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 11:58:10,762 - INFO - No new files found
+2026-01-28 11:58:10,763 - INFO - === Cycle finished ===
+2026-01-28 13:46:35,657 - INFO - === Starting automation cycle ===
+2026-01-28 13:46:36,679 - INFO - Skipping already processed file: דוח חנויות 27.01.xlsx
+2026-01-28 13:46:36,739 - INFO - No new files found
+2026-01-28 13:46:36,739 - INFO - === Cycle finished ===
+2026-01-28 13:46:36,740 - INFO - Sleeping for 15 minutes.
