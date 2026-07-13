@@ -1,8 +1,9 @@
 import os
+import sys
 import time
 import logging
 from config import SENDER_EMAIL, SAVE_FOLDER, LOG_FILE
-from outlook_utils import download_excel_attachment_from_outlook, mark_file_as_processed
+from graph_utils import download_excel_attachment_from_outlook, mark_file_as_processed
 from processor import process_report_file
 
 logging.basicConfig(
@@ -26,10 +27,20 @@ def main():
     logging.info("=== Cycle finished ===")
 
 if __name__ == "__main__":
-    while True:
+    # מצב הרצה בודדת: להרצה מתוזמנת (Task Scheduler / cron) פעם בשעה.
+    # שימוש: python main.py --once   (או קביעת RUN_ONCE=1 בסביבה)
+    run_once = '--once' in sys.argv or os.environ.get('RUN_ONCE') == '1'
+
+    if run_once:
         try:
             main()
         except Exception as e:
             logging.critical(f"Fatal error in main loop: {e}", exc_info=True)
-        logging.info("Sleeping for 5 minutes.")
-        time.sleep(300)
+    else:
+        while True:
+            try:
+                main()
+            except Exception as e:
+                logging.critical(f"Fatal error in main loop: {e}", exc_info=True)
+            logging.info("Sleeping for 5 minutes.")
+            time.sleep(300)
