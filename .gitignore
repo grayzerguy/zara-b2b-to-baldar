@@ -1,0 +1,11 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Generated runtime artifacts
+automation.log
+processed_files.log
+sent_shipments.log
+
+# Backup files
+*.bak

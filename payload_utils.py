@@ -7,8 +7,19 @@ from config import (
 
 REQUIRED_FIELDS = ['רחוב', 'מספר', 'עיר', 'שם החנות', 'Shipping bulk']
 
+
+def _clean(value):
+    """נירמול ערך תא של pandas למחרוזת: NaN/None -> '', ומספר שלם ללא סיומת '.0'."""
+    if value is None or (isinstance(value, float) and value != value):  # NaN
+        return ''
+    if isinstance(value, float) and value.is_integer():
+        return str(int(value))
+    return str(value).strip()
+
+
 def generate_api_string(row, source_filename):
-    missing = [f for f in REQUIRED_FIELDS if f not in row or str(row[f]).strip() == '']
+    values = {f: _clean(row[f]) for f in REQUIRED_FIELDS}
+    missing = [f for f in REQUIRED_FIELDS if values[f] == '']
     if missing:
         raise ValueError(f"שדות חסרים בשורה: {missing}")
 
@@ -22,11 +33,11 @@ def generate_api_string(row, source_filename):
         BALDAR_BRANCH_NAME,         # [1]  שם סניף
         BALDAR_BRANCH_CODE,         # [2]  קוד סניף
         BALDAR_CITY_ORIGIN,         # [3]  עיר מוצא
-        str(row['רחוב']),           # [4]  רחוב יעד
-        str(row['מספר']),           # [5]  מספר בית יעד
-        str(row['עיר']),            # [6]  עיר יעד
+        values['רחוב'],             # [4]  רחוב יעד
+        values['מספר'],             # [5]  מספר בית יעד
+        values['עיר'],              # [6]  עיר יעד
         BALDAR_CLIENT_NAME,         # [7]  שם לקוח
-        str(row['שם החנות']),       # [8]  שם נמען
+        values['שם החנות'],         # [8]  שם נמען
         '',                         # [9]  טלפון נמען
         '1',                        # [10] סוג משלוח
         '0',                        # [11]
@@ -34,9 +45,9 @@ def generate_api_string(row, source_filename):
         '1',                        # [13]
         '1',                        # [14]
         '0',                        # [15]
-        str(row['Shipping bulk']),   # [16] מספר משלוח
+        values['Shipping bulk'],    # [16] מספר משלוח
         BALDAR_SERVICE_CODE,        # [17] קוד שירות
-        str(row['Shipping bulk']),   # [18] מספר חבילה
+        values['Shipping bulk'],    # [18] מספר חבילה
         '',                         # [19]
         '',                         # [20]
         '',                         # [21]

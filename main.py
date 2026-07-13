@@ -31,5 +31,5 @@ if __name__ == "__main__":
             main()
         except Exception as e:
             logging.critical(f"Fatal error in main loop: {e}", exc_info=True)
-        logging.info("Sleeping for 15 minutes.")
-        time.sleep(900)
+        logging.info("Sleeping for 5 minutes.")
+        time.sleep(300)
