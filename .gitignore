@@ -9,3 +9,8 @@ sent_shipments.log
 
 # Backup files
 *.bak
+
+# Secrets — never commit. .env.example (placeholders only) is tracked.
+.env
+.env.*
+!.env.example
